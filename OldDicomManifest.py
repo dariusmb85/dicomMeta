@@ -1,6 +1,5 @@
 #!/home/dariusmb/vene-mine/bin/python
 from collections import defaultdict
-from sys import argv
 from os import listdir
 from os.path import isfile, join
 import pandas as pd
@@ -8,6 +7,7 @@ import pydicom
 import multiprocessing
 import os
 import SimpleITK as sitk
+import sys
 
 def main():
     if len(sys.argv) < 2:
@@ -35,7 +35,7 @@ def main():
                   SeriesInstanceUID, StudyDate, Manufacturer, ManufacturerModelName,
                   SliceThickness, ReconstructionDiameter, ConvolutionKernel]
         dict.update({f: INList})
-    mani = pd.DataFrame.from_dict(mydict2,
+    mani = pd.DataFrame.from_dict(dict,
                                   orient='index',
                                   columns=['PatientID', 'SeriesDescription', 'StudyInstanceUID',
                                            'SeriesInstanceUID', 'StudyDate', 'Manufacturer', 'ManufacturerModelName',

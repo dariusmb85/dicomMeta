@@ -19,7 +19,7 @@ fi
 # Get output manifest file name
 # Does it already exist?
 # If yes, skip
-manifest_name="${dicom_stack/$dicom_batch/$nrrd_dir}_mani.csv"
+manifest_name="${dicom_stack/$dicom_batch/$manifest_dir}_mani.csv"
 if [[ ! -f "${manifest_name}" ]]
 then
 	python /home/dariusmb/Git/dicomMeta/OldDicomManifest.py ${dicom_stack} ${manifest_name}
