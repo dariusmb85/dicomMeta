@@ -59,30 +59,8 @@ for subdir, dirs, files in os.walk(rootdir):
 # onlyfiles = [f for f in listdir(mypath_SHARP) if isfile(join(mypath_SHARP, f))]
 #onlyfiles = tempFiles[0:9]
 #mydict2 = {}
-#for file in onlyfiles:
-    # print(file)
-    #f = str.split(file, "/")[8]
-    # print(f)
-    # filefull = [mypath_SHARP,file]
-    # filefull = "".join(filefull)
-    # print(filefull)
-    #ds = pydicom.read_file(file)
-    #PatientID = ds.PatientID
-    #SeriesDescription = ds.SeriesDescription
-    #StudyInstanceUID = ds.StudyInstanceUID
-    #SeriesInstanceUID = ds.SeriesInstanceUID
-    #StudyDate = ds.StudyDate
-    #Manufacturer = ds.Manufacturer
-    #ManufacturerModelName = ds.ManufacturerModelName
-    #SliceThickness = ds.SliceThickness
-    #ReconstructionDiameter = ds.ReconstructionDiameter
-    #ConvolutionKernel = ds.ConvolutionKernel
-    #INList = [PatientID, SeriesDescription, StudyInstanceUID,
-              #SeriesInstanceUID, StudyDate, Manufacturer, ManufacturerModelName,
-              #SliceThickness, ReconstructionDiameter, ConvolutionKernel]
-    #mydict2.update({f: INList})
 
-
+mydat = parallelMetaData(tempFiles)
 mani = pd.DataFrame.from_dict(mydat,
                               orient='index',
                               columns=['PatientID', 'SeriesDescription', 'StudyInstanceUID',
