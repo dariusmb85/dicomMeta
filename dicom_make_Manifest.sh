@@ -1,4 +1,5 @@
 #!/bin/bash
+#Edited from Matt Satusky script
 
 # Read in pipe output
 dicom_stack=$1

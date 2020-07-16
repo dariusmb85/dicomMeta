@@ -1,4 +1,5 @@
 #!/bin/bash
+#Edited from Matt Satusky script
 
 for dicom_dir in $(find /mnt/efs-new/copdgene -mindepth 1 -maxdepth 1 -type d -name "COPDgene_batch*")
 do
